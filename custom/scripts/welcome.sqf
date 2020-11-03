@@ -20,7 +20,7 @@ _posDefault         = [0.1,0.1,0.5];
 
 
 _title             = "Welcome to Exile Server";
-_shorttext         = "mysite.com<br />vk.com/group";
+_shorttext         = "LostSakhalin.ru<br />vk.com/group";
 _posText        = [0.1,0.1,0.5];
 
 

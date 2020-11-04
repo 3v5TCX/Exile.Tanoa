@@ -135,5 +135,3 @@ ExileServer_object_container_database_insert =        "\custom_code\server_code\
 ExileServer_object_container_createContainer =        "\custom_code\server_code\DB3\ExileServer_object_container_createContainer.sqf";
 ExileServer_object_construction_database_load =       "\custom_code\server_code\DB3\ExileServer_object_construction_database_load.sqf";
 ExileServer_object_construction_database_insert =     "\custom_code\server_code\DB3\ExileServer_object_construction_database_insert.sqf";
-
-

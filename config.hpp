@@ -20,9 +20,9 @@ class CfgPvE
 	allowHandcuffUse = 0;   //разрешить связывать игроков
 	enableDamagePlayerToPlayer = 0; 
 	cursorTargetESP = 1;
-		distanceESP = 500; 	//дистанция видимости игрока, если навести на него прицел
+	distanceESP = 500; 	//дистанция видимости игрока, если навести на него прицел
 	freeESP = 1;
-		distancefreeESP = 2000;
+	distancefreeESP = 2000;
 	PvP_zones[] = 
 	{
 		{"PvPMarker",1000}	//Маркер от который будет считаться точкой, и радиус от маркера
@@ -120,7 +120,7 @@ class CfgAtlasVirtualGarage
 	//Доступно если вы приобрели DLC для сборки. Пишите за покупкой
 	
 	//Включить гараж
-	enableGarage = false;
+	enableGarage = true;
 	
 	// Сохранять инвентарь
 	storeInventory = true;
@@ -137,9 +137,11 @@ class CfgSpawnMenu
 	chooseSpawnBox = true;
 	tooltipText[] = 
 	{
-		"Consider Donating for Special Perks!",
-		"Have fun playing!",
-		"Make sure to read our Rules!"
+		"Подумайте о пожертвовании на развитие сервера!",
+		"Получайте удовольствие играя!",
+		"Позовите друзей, вместе веселей!"
+		"Обязательно ознакомьтесь с нашими правилами!"
+
 	};
 };
 class CfgRestrictWeapons
@@ -573,11 +575,11 @@ class CfgRestartWarnings
     };
     class scheduled
     {
-        schedule[] = {4,8,12,16,20,24}; // Рестарты по расписанию, писать время в 24х часовом формате
+        schedule[] = {0,4,8,12,16,20}; // Рестарты по расписанию, писать время в 24х часовом формате
     };
     forceLeave = 1; // кикнуть всех игроков перед рестартом, писать в минутах, - 0 чтобы отключить
     giveWarningsAt[] = {30,20,10,5,2,1}; //Выдавать предупреждения о рестарте за ... мин до рестарта
-    mode = 1; // 1 = динамический | 2 = по расписанию
+    mode = 2; // 1 = динамический | 2 = по расписанию
 };
 //динамический режим: рестарт будет считаться от запуска сервера
  
@@ -636,14 +638,14 @@ class CfgXM8
 	{
 		controlID = 4070;
 		appID = "App01";
-		title = "Settings";
+		title = "Настройки";
 	};
 	
 	class healthScanner
 	{
 		controlID = 4120;
 		appID = "App02";
-		title = "Health Scanner";
+		title = "Сканер Здоровья";
 	};
 	
 	class slothMachine
@@ -654,7 +656,7 @@ class CfgXM8
 	};
 	class ExAd_Info 
 	{
-		title = "Server Info";
+		title = "Информация о сервер";
 		controlID = 50100;					//IDC:50100 -> 50102 || These need to be unique and out of range from each other
 		logo = "ExadClient\XM8\Apps\Info\Icon_SI.paa";
 		onLoad = "ExAdClient\XM8\Apps\Info\onLoad.sqf";
@@ -663,7 +665,7 @@ class CfgXM8
 	};	
 	class ExAd_CHVD 
 	{
-		title = "View Distance Settings";
+		title = "Просмотр Настроек Расстояния";
 		controlID = 50200;					//IDC:50200 -> 50250 || These need to be unique and out of range from each other
 		config = "ExadClient\XM8\Apps\CHVD\config.sqf";
 		logo = "ExadClient\XM8\Apps\CHVD\Icon_CHVD.paa";
@@ -673,7 +675,7 @@ class CfgXM8
 	};
 	class ExAd_Journal 
 	{
-		title = "Journal";
+		title = "Журнал";
 		controlID = 50300;					//IDC:50300 -> 50305 || These need to be unique and out of range from each other
 		config = "ExadClient\XM8\Apps\Journal\config.sqf";
 		logo = "ExadClient\XM8\Apps\Journal\Icon_Journal.paa";
@@ -684,7 +686,7 @@ class CfgXM8
 	class BRAmaRecipes 
 	{
 		controlID = 107000;
-		title = "Recipies";		
+		title = "Рецепты";		
 		logo = "ExAdClient\XM8\Apps\BRAmaRecipes\BRAma.paa";
 		config = "ExAdClient\XM8\Apps\BRAmaRecipes\config.sqf";
 		onLoad = "ExAdClient\XM8\Apps\BRAmaRecipes\onLoad.sqf";
@@ -692,13 +694,13 @@ class CfgXM8
 	};
 	class APPS_Bike
 	{
-		title = "Deploy Quad";
+		title = "Развернуть Квадроцикл";
 		logo = "\dbo\dbo_old_bike\data\icon_mmt_ca.paa";
 		quickFunction = "[] call Atlas_fnc_SpawnBike";
 	};
 	class ExAd_SB 
 	{
-		title = "Statsbar Settings";
+		title = "Параметры статусбар";
 		controlID = 50400;					//IDC:50300 -> 50305 || These need to be unique and out of range from each other
 		logo = "ExadClient\XM8\Apps\SB_Settings\Icon_SB.paa";
 		onLoad = "ExAdClient\XM8\Apps\SB_Settings\onLoad.sqf";
@@ -706,7 +708,7 @@ class CfgXM8
 	
 	class AirDrop 
 	{
-		title = "Air Drop";
+		title = "Воздушный сброс";
 		controlID = 50600;
 		config = "ExAdClient\XM8\Apps\AirDrop\config.sqf";
 		logo = "ExAdClient\XM8\Apps\AirDrop\drop.paa";
@@ -4666,7 +4668,7 @@ class CfgInteractionMenus
 		{
 			class Paint: ExileAbstractAction
 			{
-				title = "Paint";
+				title = "Покрасить";
 				condition = "_this call ExileClient_VehiclePainting_CanPaintVehicle";
 				action = "_this call ExileClient_VehiclePainting_DialogLoad";
 			};
@@ -4674,7 +4676,7 @@ class CfgInteractionMenus
 			
 			class ScanLock: ExileAbstractAction
 			{
-				title = "Scan Lock";
+				title = "Сканировать блокировку";
 				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !ExilePlayerInSafezone && ((locked ExileClientInteractionObject) != 1)";
 				action = "_this call ExileClient_object_lock_scan";
 			};
@@ -4682,7 +4684,7 @@ class CfgInteractionMenus
 			// Locks a vehicle
 			class Lock: ExileAbstractAction
 			{
-				title = "Lock";
+				title = "Закрыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 0) && ((locked ExileClientInteractionObject) != 1)";
 				action = "true spawn ExileClient_object_lock_toggle";
 			};
@@ -4690,7 +4692,7 @@ class CfgInteractionMenus
 			// Unlocks a vehicle
 			class Unlock: ExileAbstractAction
 			{
-				title = "Unlock";
+				title = "Открыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "false spawn ExileClient_object_lock_toggle";
 			};
@@ -4698,14 +4700,14 @@ class CfgInteractionMenus
 			// Repairs a vehicle to 100%. Requires Duckttape
 			class Repair: ExileAbstractAction
 			{
-				title = "Repair";
+				title = "Ремонтировать";
 				condition = "true";
 				action = "['RepairVehicle', _this select 0] call ExileClient_action_execute";
 			};
 			
 			class ClaimVehicle: ExileAbstractAction
 			{
-				title = "Claim Ownership";
+				title = "Попробовать забрать (Claim Ownership)";
 				condition = "true";
 				action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
 			};
@@ -4714,7 +4716,7 @@ class CfgInteractionMenus
 			// Hot-wires a vehicle
 			class Hotwire: ExileAbstractAction
 			{
-				title = "Hotwire";
+				title = "Угнать";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
 			};
@@ -4723,7 +4725,7 @@ class CfgInteractionMenus
 			// Check if vector up is fucked
 			class Flip: ExileAbstractAction
 			{
-				title = "Flip";
+				title = "Перевернуть (Flip)";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_flip";
 			};
@@ -4731,7 +4733,7 @@ class CfgInteractionMenus
 			// Fills fuel from a can into a car
 			class Refuel: ExileAbstractAction
 			{
-				title = "Refuel";
+				title = "Дозаправиться";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_refuel";
 			};
@@ -4739,7 +4741,7 @@ class CfgInteractionMenus
 			// Drains fuel from a car into an empty jerry can
 			class DrainFuel: ExileAbstractAction
 			{
-				title = "Drain Fuel";
+				title = "Слив Топлива";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_drain";
 			};
@@ -4755,13 +4757,13 @@ class CfgInteractionMenus
 		{
 			class Paint: ExileAbstractAction
 			{
-				title = "Paint";
+				title = "Покрасить";
 				condition = "_this call ExileClient_VehiclePainting_CanPaintVehicle";
 				action = "_this call ExileClient_VehiclePainting_DialogLoad";
 			};
 			class ScanLock: ExileAbstractAction
 			{
-				title = "Scan Lock";
+				title = "Сканировать блокировку";
 				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !ExilePlayerInSafezone && ((locked ExileClientInteractionObject) != 1)";
 				action = "_this call ExileClient_object_lock_scan";
 			};
@@ -4769,7 +4771,7 @@ class CfgInteractionMenus
 			// Locks a vehicle
 			class Lock: ExileAbstractAction
 			{
-				title = "Lock";
+				title = "Закрыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 0) && ((locked ExileClientInteractionObject) != 1)";
 				action = "true spawn ExileClient_object_lock_toggle";
 			};
@@ -4777,7 +4779,7 @@ class CfgInteractionMenus
 			// Unlocks a vehicle
 			class Unlock: ExileAbstractAction
 			{
-				title = "Unlock";
+				title = "Открыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "false spawn ExileClient_object_lock_toggle";
 			};
@@ -4785,14 +4787,14 @@ class CfgInteractionMenus
 			// Repairs a vehicle to 100%. Requires Duckttape
 			class Repair: ExileAbstractAction
 			{
-				title = "Repair";
+				title = "Ремонтировать";
 				condition = "true";
 				action = "['RepairVehicle', _this select 0] call ExileClient_action_execute";
 			};
 			
 			class ClaimVehicle: ExileAbstractAction
 			{
-				title = "Claim Ownership";
+				title = "Попробовать забрать (Claim Ownership)";
 				condition = "true";
 				action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
 			};
@@ -4801,7 +4803,7 @@ class CfgInteractionMenus
 			// Hot-wires a vehicle
 			class Hotwire: ExileAbstractAction
 			{
-				title = "Hotwire";
+				title = "Угнать";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
 			};
@@ -4810,7 +4812,7 @@ class CfgInteractionMenus
 			// Check if vector up is fucked
 			class Flip: ExileAbstractAction
 			{
-				title = "Flip";
+				title = "Перевернуть (Flip)";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_flip";
 			};
@@ -4818,7 +4820,7 @@ class CfgInteractionMenus
 			// Fills fuel from a can into a car
 			class Refuel: ExileAbstractAction
 			{
-				title = "Refuel";
+				title = "Дозаправиться";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_refuel";
 			};
@@ -4826,7 +4828,7 @@ class CfgInteractionMenus
 			// Drains fuel from a car into an empty jerry can
 			class DrainFuel: ExileAbstractAction
 			{
-				title = "Drain Fuel";
+				title = "Слив Топлива";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_drain";
 			};
@@ -4841,13 +4843,13 @@ class CfgInteractionMenus
 		{
 			class Paint: ExileAbstractAction
 			{
-				title = "Paint";
+				title = "Покрасить";
 				condition = "_this call ExileClient_VehiclePainting_CanPaintVehicle";
 				action = "_this call ExileClient_VehiclePainting_DialogLoad";
 			};
 			class ScanLock: ExileAbstractAction
 			{
-				title = "Scan Lock";
+				title = "Сканировать блокировку";
 				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !ExilePlayerInSafezone && ((locked ExileClientInteractionObject) != 1)";
 				action = "_this call ExileClient_object_lock_scan";
 			};
@@ -4855,7 +4857,7 @@ class CfgInteractionMenus
 			// Locks a vehicle
 			class Lock: ExileAbstractAction
 			{
-				title = "Lock";
+				title = "Закрыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 0) && ((locked ExileClientInteractionObject) != 1)";
 				action = "true spawn ExileClient_object_lock_toggle";
 			};
@@ -4863,7 +4865,7 @@ class CfgInteractionMenus
 			// Unlocks a vehicle
 			class Unlock: ExileAbstractAction
 			{
-				title = "Unlock";
+				title = "Открыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "false spawn ExileClient_object_lock_toggle";
 			};
@@ -4871,14 +4873,14 @@ class CfgInteractionMenus
 			// Repairs a vehicle to 100%. Requires Duckttape
 			class Repair: ExileAbstractAction
 			{
-				title = "Repair";
+				title = "Ремонтировать";
 				condition = "true";
 				action = "['RepairVehicle', _this select 0] call ExileClient_action_execute";
 			};
 			
 			class ClaimVehicle: ExileAbstractAction
 			{
-				title = "Claim Ownership";
+				title = "Попробовать забрать (Claim Ownership)";
 				condition = "true";
 				action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
 			};
@@ -4887,7 +4889,7 @@ class CfgInteractionMenus
 			// Hot-wires a vehicle
 			class Hotwire: ExileAbstractAction
 			{
-				title = "Hotwire";
+				title = "Угнать";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
 			};
@@ -4896,7 +4898,7 @@ class CfgInteractionMenus
 			// Check if vector up is fucked
 			class Flip: ExileAbstractAction
 			{
-				title = "Flip";
+				title = "Перевернуть (Flip)";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_flip";
 			};
@@ -4904,7 +4906,7 @@ class CfgInteractionMenus
 			// Fills fuel from a can into a car
 			class Refuel: ExileAbstractAction
 			{
-				title = "Refuel";
+				title = "Дозаправиться";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_refuel";
 			};
@@ -4912,7 +4914,7 @@ class CfgInteractionMenus
 			// Drains fuel from a car into an empty jerry can
 			class DrainFuel: ExileAbstractAction
 			{
-				title = "Drain Fuel";
+				title = "Слив Топлива";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_drain";
 			};
@@ -4928,13 +4930,13 @@ class CfgInteractionMenus
 		{
 			class Paint: ExileAbstractAction
 			{
-				title = "Paint";
+				title = "Покрасить";
 				condition = "_this call ExileClient_VehiclePainting_CanPaintVehicle";
 				action = "_this call ExileClient_VehiclePainting_DialogLoad";
 			};
 			class ScanLock: ExileAbstractAction
 			{
-				title = "Scan Lock";
+				title = "Сканировать блокировку";
 				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && ((locked ExileClientInteractionObject) != 1) && !ExilePlayerInSafezone";
 				action = "_this call ExileClient_object_lock_scan";
 			};
@@ -4942,7 +4944,7 @@ class CfgInteractionMenus
 			// Locks a vehicle
 			class Lock: ExileAbstractAction
 			{
-				title = "Lock";
+				title = "Закрыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 0) && ((locked ExileClientInteractionObject) != 1)";
 				action = "true spawn ExileClient_object_lock_toggle";
 			};
@@ -4950,7 +4952,7 @@ class CfgInteractionMenus
 			// Unlocks a vehicle
 			class Unlock: ExileAbstractAction
 			{
-				title = "Unlock";
+				title = "Открыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "false spawn ExileClient_object_lock_toggle";
 			};
@@ -4958,7 +4960,7 @@ class CfgInteractionMenus
 			// Hot-wires a vehicle
 			class Hotwire: ExileAbstractAction
 			{
-				title = "Hotwire";
+				title = "Угнать";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
 			};
@@ -4966,14 +4968,14 @@ class CfgInteractionMenus
 			// Repairs a vehicle to 100%. Requires Duckttape
 			class Repair: ExileAbstractAction
 			{
-				title = "Repair";
+				title = "Ремонтировать";
 				condition = "true";
 				action = "['RepairVehicle', _this select 0] call ExileClient_action_execute";
 			};
 			
 			class ClaimVehicle: ExileAbstractAction
 			{
-				title = "Claim Ownership";
+				title = "Попробовать забрать (Claim Ownership)";
 				condition = "true";
 				action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
 			};
@@ -4983,7 +4985,7 @@ class CfgInteractionMenus
 			// Check if vector up is fucked
 			class Flip: ExileAbstractAction
 			{
-				title = "Flip";
+				title = "Перевернуть (Flip)";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_flip";
 			};
@@ -4991,7 +4993,7 @@ class CfgInteractionMenus
 			// Fills fuel from a can into a car
 			class Refuel: ExileAbstractAction
 			{
-				title = "Refuel";
+				title = "Дозаправиться";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_refuel";
 			};
@@ -4999,21 +5001,21 @@ class CfgInteractionMenus
 			// Drains fuel from a car into an empty jerry can
 			class DrainFuel: ExileAbstractAction
 			{
-				title = "Drain Fuel";
+				title = "Слив Топлива";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_drain";
 			};
 
 			class RotateLeft: ExileAbstractAction
 			{
-				title = "Rotate Left";	
+				title = "Поворот Влево";	
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "[ExileClientInteractionObject,-15] call ExileClient_object_vehicle_rotate";
 			};
 
 			class RotateRight: ExileAbstractAction
 			{
-				title = "Rotate Right";
+				title = "Поворот Вправо";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "[ExileClientInteractionObject,15] call ExileClient_object_vehicle_rotate";
 			};
@@ -5029,7 +5031,7 @@ class CfgInteractionMenus
 		{
 			class ScanLock: ExileAbstractAction
 			{
-				title = "Scan Lock";
+				title = "Сканировать блокировку";
 				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 1) && !ExilePlayerInSafezone";
 				action = "_this call ExileClient_object_lock_scan";
 			};
@@ -5037,34 +5039,34 @@ class CfgInteractionMenus
 			// Locks a vehicle
 			class Lock : ExileAbstractAction
 			{
-				title = "Lock";
+				title = "Закрыть";
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "true spawn ExileClient_object_lock_toggle";
 			};
 
 			class Unlock : ExileAbstractAction
 			{
-				title = "Unlock";
+				title = "Открыть";
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo -1)";
 				action = "false spawn ExileClient_object_lock_toggle";
 			};
 
 			class Pack : ExileAbstractAction
 			{
-				title = "Pack";
+				title = "Упаковка (Pack)";
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "_this spawn ExileClient_object_container_pack";
 			};
 
 			class SetPinCode : ExileAbstractAction
 			{
-				title = "Set PIN";
+				title = "Назначить PIN";
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "_this spawn ExileClient_object_lock_setPin";
 			};
 			class HackLock: ExileAbstractAction
 			{
-				title = "Hack Lock";
+				title = "Хакнуть замок";
 				condition = "(getNumber(missionConfigFile >> 'CfgHacking' >> 'enableHacking') isEqualTo 1) && ('Exile_Item_Laptop' in (magazines player)) && ((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo -1) && !ExilePlayerInSafezone";
 				action = "['HackLock', _this select 0] call ExileClient_action_execute";
 			};													
@@ -5080,7 +5082,7 @@ class CfgInteractionMenus
 		{
 			class CameraSystem: ExileAbstractAction
 			{
-				title = "CCTV Access";
+				title = "CCTV доступ";
 				condition = "((ExileClientInteractionObject animationPhase 'LaptopLidRotation') >= 0.5)";
 				action = "_this call ExileClient_gui_baseCamera_show";
 			};
@@ -5096,21 +5098,21 @@ class CfgInteractionMenus
 		{
 			class Mount: ExileAbstractAction
 			{
-				title = "Mount";
+				title = "Монтаж";
 				condition = "(isNull (attachedTo ExileClientInteractionObject)) && ((ExileClientInteractionObject getvariable ['ExileOwnerUID',1]) isEqualTo 1)";
 				action = "_this call ExileClient_object_supplyBox_mount";
 			};
 
 			class Install: ExileAbstractAction
 			{
-				title = "Install";
+				title = "Инсталлировать";
 				condition = "isNull (attachedTo ExileClientInteractionObject) && ((ExileClientInteractionObject getvariable ['ExileOwnerUID',1]) isEqualTo 1)";
 				action = "_this call ExileClient_object_supplyBox_install";
 			};
 
 			class Unmount: ExileAbstractAction
 			{
-				title = "Unmount";
+				title = "Демонтаж";
 				condition = "!(isNull (attachedTo ExileClientInteractionObject)) && ((ExileClientInteractionObject getvariable ['ExileOwnerUID',1]) isEqualTo 1)";
 				action = "_this call ExileClient_object_supplyBox_unmount";
 			};
@@ -5125,20 +5127,20 @@ class CfgInteractionMenus
 		{
 			class Paint: ExileAbstractAction
 			{
-				title = "Paint";
+				title = "Покрасить";
 				condition = "call ExileClient_BasePainting_CanPaintObject";
 				action = "_this call ExileClient_BasePainting_DialogLoad";
 			};
 			class Lower: ExileAbstractAction
 			{
-				title = "Lower";
+				title = "Опустить";
 				condition = "ExileClientInteractionObject call ExileClient_object_construction_openBridgeShow";
 				action = "ExileClientInteractionObject animateSource ['DrawBridge_Source', 0];";
 			};
 			
 			class Raise: ExileAbstractAction
 			{
-				title = "Raise";
+				title = "Поднять";
 				condition = "((ExileClientInteractionObject animationSourcePhase 'DrawBridge_Source') < 0.5)";
 				action = "ExileClientInteractionObject animateSource ['DrawBridge_Source', 2]";
 			};
@@ -5153,27 +5155,27 @@ class CfgInteractionMenus
 		{
 			class Paint: ExileAbstractAction
 			{
-				title = "Paint";
+				title = "Покрасить";
 				condition = "call ExileClient_BasePainting_CanPaintObject";
 				action = "_this call ExileClient_BasePainting_DialogLoad";
 			};
 			class ScanLock: ExileAbstractAction
 			{
-				title = "Scan Lock";
+				title = "Сканировать блокировку";
 				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 1)";
 				action = "_this call ExileClient_object_lock_scan";
 			};
 
 			class Unlock : ExileAbstractAction
 			{
-				title = "Unlock";
+				title = "Открыть";
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo -1)";
 				action = "false spawn ExileClient_object_lock_toggle";
 			};
 
 			class Lock : ExileAbstractAction
 			{
-				title = "Lock";
+				title = "Закрыть";
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "true spawn ExileClient_object_lock_toggle";
 			};
@@ -5181,7 +5183,7 @@ class CfgInteractionMenus
 			// Picks up the construction so you can move it
 			class Move: ExileAbstractAction
 			{
-				title = "Move";
+				title = "Переместить";
 				condition = "call ExileClient_util_world_isInOwnTerritory";
 				action = "_this spawn ExileClient_object_construction_move";
 			};
@@ -5189,42 +5191,42 @@ class CfgInteractionMenus
 			// Removes the construction.
 			class Deconstruct: ExileAbstractAction
 			{
-				title = "Remove";
+				title = "Убрать";
 				condition = "call ExileClient_util_world_isInOwnTerritory";
 				action = "_this spawn ExileClient_object_construction_deconstruct";
 			};
 
 			class AddALock : ExileAbstractAction
 			{
-				title = "Add a Lock";
+				title = "Добавить блокировку";
 				condition = "call ExileClient_object_construction_lockAddShow";
 				action = "_this spawn ExileClient_object_construction_lockAdd";
 			};
 			
 			class Upgrade : ExileAbstractAction
 			{
-				title = "Upgrade";
+				title = "Обновить";
 				condition = "call ExileClient_object_construction_upgradeShow";
 				action = "_this call ExileClient_object_construction_upgrade";
 			};
 
 			class MakeBoom : ExileAbstractAction
 			{
-				title = "Plant charge";
+				title = "Заводская зарядка (Plant charge)";
 				condition = "call ExileClient_system_breaching_condition";
 				action = "_this call ExileClient_system_breaching_action";
 			};
 
 			class Repair : ExileAbstractAction
 			{
-				title = "Repair";
+				title = "Ремонтировать";
 				condition = "(!((ExileClientInteractionObject getVariable ['ExileConstructionDamage',0]) isEqualTo 0)) && (call ExileClient_util_world_isInOwnTerritory)";
 				action = "_this call ExileClient_object_construction_repair";
 			};
 
 			class GrindLock : ExileAbstractAction
 			{
-				title = "Grind Lock";
+				title = "Шлифовальный Замок";
 				condition = "(getNumber(missionConfigFile >> 'CfgGrinding' >> 'enableGrinding') isEqualTo 1) && ('Exile_Item_Grinder' in (magazines player)) && ('Exile_Magazine_Battery' in (magazines player)) && ((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo -1) && ((ExileClientInteractionObject animationPhase 'DoorRotation') < 0.5)";
 				action = "['GrindLock', _this select 0] call ExileClient_action_execute";
 			};														 
@@ -5243,14 +5245,14 @@ class CfgInteractionMenus
 		{
 			class Pack 
 			{
-				title = "Pack";
+				title = "Упаковка (Pack) #5248";
 				condition = "!((typeOf ExileClientInteractionObject) isEqualTo 'Exile_Container_SupplyBox')";
 				action = "_this spawn ExileClient_object_container_pack";
 			};
 			// Picks up the container so you can move it
 			class Move: ExileAbstractAction
 			{
-				title = "Move";
+				title = "Перемещать";
 				condition = "(getNumber(configFile >> 'CfgVehicles' >> typeOf ExileClientInteractionObject >> 'exileIsLockable') isEqualTo 0) || ((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "_this spawn ExileClient_object_construction_move";
 			};
@@ -5266,19 +5268,19 @@ class CfgInteractionMenus
 		{
 			class StealFlag: ExileAbstractAction
 			{
-				title = "Steal Flag";
+				title = "Украсть Флаг";
 				condition = "((ExileClientInteractionObject getvariable ['ExileFlagStolen',1]) isEqualTo 0)";
 				action = "['StealFlag', _this select 0] call ExileClient_action_execute";
 			};
 			class HackVG : ExileAbstractAction
 			{
-				title = "Hack Flag";
+				title = "Хакнуть Флаг";
 				condition = "(getNumber(missionConfigFile >> 'CfgFlagHacking' >> 'enableHacking') isEqualTo 1) && ('Exile_Item_Laptop' in (magazines player))";
 				action = "['HackFlag', _this select 0] call ExileClient_action_execute";
 			};			
 			class RestoreFlag: ExileAbstractAction
 			{
-				title = "Restore Flag";
+				title = "Восстановить Флаг";
 				condition = "((ExileClientInteractionObject getvariable ['ExileFlagStolen',0]) isEqualTo 1)";
 				action = "['restoreFlagRequest', [netID ExileClientInteractionObject]] call ExileClient_system_network_send";
 			};
@@ -5294,14 +5296,14 @@ class CfgInteractionMenus
 		{
 			class Paint: ExileAbstractAction
 			{
-				title = "Paint";
+				title = "Покрасить";
 				condition = "_this call ExileClient_VehiclePainting_CanPaintVehicle";
 				action = "_this call ExileClient_VehiclePainting_DialogLoad";
 			};
 			// Locks a vehicle
 			class Lock: ExileAbstractAction
 			{
-				title = "Lock";
+				title = "Закрыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 0) && ((locked ExileClientInteractionObject) != 1)";
 				action = "true spawn ExileClient_object_lock_toggle";
 			};
@@ -5309,7 +5311,7 @@ class CfgInteractionMenus
 			// Unlocks a vehicle
 			class Unlock: ExileAbstractAction
 			{
-				title = "Unlock";
+				title = "Открыть";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "false spawn ExileClient_object_lock_toggle";
 			};
@@ -5317,7 +5319,7 @@ class CfgInteractionMenus
 			// Hot-wires a vehicle
 			class Hotwire: ExileAbstractAction
 			{
-				title = "Hotwire";
+				title = "Угнать";
 				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
 				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
 			};
@@ -5325,7 +5327,7 @@ class CfgInteractionMenus
 			// Repairs a vehicle to 100%. Requires Duckttape
 			class Repair: ExileAbstractAction
 			{
-				title = "Repair";
+				title = "Ремонтировать";
 				condition = "true";
 				action = "['RepairVehicle', _this select 0] call ExileClient_action_execute";
 			};
@@ -5333,13 +5335,13 @@ class CfgInteractionMenus
 			// Fills fuel from a can into a car
 			class Refuel: ExileAbstractAction
 			{
-				title = "Refuel";
+				title = "Дозаправиться";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_refuel";
 			};
 			class ClaimVehicle: ExileAbstractAction
 			{
-				title = "Claim Ownership";
+				title = "Попробовать забрать (Claim Ownership)";
 				condition = "true";
 				action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
 			};
@@ -5348,7 +5350,7 @@ class CfgInteractionMenus
 			// Drains fuel from a car into an empty jerry can
 			class DrainFuel: ExileAbstractAction
 			{
-				title = "Drain Fuel";
+				title = "Слив Топлива";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_drain";
 			};
@@ -5372,7 +5374,7 @@ class CfgInteractionMenus
 		{
 			class Flip: ExileAbstractAction
 			{
-				title = "Flip";
+				title = "Перевернуть";
 				condition = "true";
 				action = "_this call ExileClient_object_vehicle_flip";
 			};
@@ -5388,44 +5390,44 @@ class CfgInteractionMenus
 		{
 			class Drag: ExileAbstractAction
 			{
-				title = "Drag";
+				title = "Тащить (Drag)";
 				condition = "(alive ExileClientInteractionObject) && (ExileClientInteractionObject getVariable ['ExileIsHandcuffed', false]) && !(ExileClientIsHandcuffed) && !(ExileClientInteractionObject getVariable['IsBeingDragged',false])";
 				action = "'Drag' call XG_DragPlayer";
 			};
 			class EndDrag: ExileAbstractAction
 			{
-				title = "Stop Dragging";
+				title = "Бросить (Stop Dragging)";
 				condition = "(alive ExileClientInteractionObject) && (ExileClientInteractionObject getVariable ['ExileIsHandcuffed', false]) && !(ExileClientIsHandcuffed) && (ExileClientInteractionObject getVariable['IsBeingDragged',false]) && ExileClientPlayerIsDragging";
 				action = "'End' call XG_DragPlayer";
 			};
 			class Free: ExileAbstractAction
 			{
-				title = "Free";
+				title = "Освободить (Free)";
 				condition = "(alive ExileClientInteractionObject) && (ExileClientInteractionObject getVariable ['ExileIsHandcuffed', false]) && !(ExileClientIsHandcuffed) && !(ExileClientInteractionObject getVariable['IsBeingDragged',false]) && !(ExileClientPlayerIsDragging)";
 				action = "_this call ExileClient_object_handcuffs_free";
 			};
 			class Search: ExileAbstractAction
 			{
-				title = "Search Gear";
+				title = "Поисковое Устройство (Search Gear)";
 				condition = "(alive ExileClientInteractionObject) && (ExileClientInteractionObject getVariable ['ExileIsHandcuffed', false]) && !(ExileClientIsHandcuffed) && !(ExileClientInteractionObject getVariable['IsBeingDragged',false]) && !(ExileClientPlayerIsDragging)";
 				action = "_this call ExileClient_object_handcuffs_searchGear";
 			};
 
 			class Identify: ExileAbstractAction
 			{
-				title = "Identify Body";
+				title = "Идентифицировать Тело (Identify Body)";
 				condition = "!(alive ExileClientInteractionObject)";
 				action = "_this call ExileClient_object_player_identifyBody";
 			};
 			class Revive: ExileAbstractAction
 			{
-				title = "Revive";
+				title = "Возрадить (Revive)";
 				condition = "(!(alive ExileClientInteractionObject) && (ExileClientInteractionObject getVariable ['EnigmaRevivePermitted', true]) && (magazines player find 'Exile_Item_Defibrillator' >= 0))";
 				action = "_this spawn Enigma_RevivePlyr";
 			};
 			class HideCorpse: ExileAbstractAction
 			{
-				title = "Hide Body";
+				title = "Спрятать тело (Hide Body)";
 				condition = "!(alive ExileClientInteractionObject) && ('Exile_Melee_Shovel' isEqualTo (currentWeapon player))";
 				action = "['HideBody', (_this select 0)] call ExileClient_action_execute";
 			};
@@ -5441,7 +5443,7 @@ class CfgInteractionMenus
 		{			
 			class Gut: ExileAbstractAction
 			{
-				title = "Gut Animal";
+				title = "Кишки Животных (Gut Animal)";
 				condition = "!(alive ExileClientInteractionObject) && (ExileClientInteractionObject getVariable ['CanBeGutted', false])";
 				action = "['GutAnimal', ExileClientInteractionObject] call ExileClient_action_execute";
 			};
@@ -5615,7 +5617,7 @@ class CfgInteractionModels
 class CfgLocker 
 {
 	numbersOnly = "0123456789";	//не трогать
-	maxDeposit = 100000;		//Максимальный депозит в банке
+	maxDeposit = 199999;		//Максимальный депозит в банке
 	multiplierCapacity = 50;	//На сколько увеличить хранилище для денег (это не банк)
 	wages = 1;					//1 - ON, 0 - OFF
 	wagesPopTabs = 20000;		//зарплата денег
@@ -8468,7 +8470,7 @@ class CfgVirtualGarage
 class XM8_App01_Button: RscExileXM8AppButton1x1
 {
     textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
-    text = "Settings";
+    text = "Настройки";
     onButtonClick = "['settings', 0] call ExileClient_gui_xm8_slide";
     resource = "XM8SlideSettings";
 };
@@ -8476,7 +8478,7 @@ class XM8_App01_Button: RscExileXM8AppButton1x1
 class XM8_App02_Button: RscExileXM8AppButton1x1
 {
     textureNoShortcut = "\exile_assets\texture\ui\xm8_app_health_scanner_ca.paa";
-    text = "Health Scanner";
+    text = "Сканер Здоровья";
     onButtonClick = "['healthScanner', 0] call ExileClient_gui_xm8_slide";
     resource = "XM8SlideHealthScanner";
 };
@@ -8492,7 +8494,7 @@ class XM8_App03_Button: RscExileXM8AppButton1x1
 class XM8_App04_Button: RscExileXM8AppButton1x1
 {
     textureNoShortcut = "\exile_assets\texture\ui\xm8_app_boom_ca.paa";
-    text = "BOOM!";
+    text = "BOOM! #8497";
     onButtonClick = "call ExileClient_system_breaching_detonate";
     resource = "";
 };
@@ -8611,7 +8613,7 @@ class XM8SlideSettings: RscExileXM8Slide
 		class 8GLabel: RscExileXM8Text
 		{
 			idc = -1;
-			text = "Show my device in global 8G network."; 
+			text = "Показать мое устройство в глобальной сети 8G."; 
 			x = (13 - 3) * (0.025);
 			y = (5 - 2) * (0.04);
 			w = 22 * (0.025);
@@ -8632,7 +8634,7 @@ class XM8SlideSettings: RscExileXM8Slide
 		class SoundLabel: RscExileXM8Text
 		{
 			idc = -1;
-			text = "Play a beep sound on notifications."; 
+			text = "Воспроизведение звукового сигнала при уведомлениях."; 
 			x = (13 - 3) * (0.025);
 			y = (7 - 2) * (0.04);
 			w = 22 * (0.025);

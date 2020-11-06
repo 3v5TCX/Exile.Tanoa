@@ -5,6 +5,7 @@
 [] ExecVM "custom\scripts\welcome.sqf";					
 [] ExecVM "custom\scripts\reservedslots.sqf";					
 [] ExecVM "custom\scripts\name_tags.sqf";					
+[] execVM "real_weather.sqf";	//Подключаем реальную погоду
 execVM "R3F_LOG\init.sqf";
 
 //Configs vars

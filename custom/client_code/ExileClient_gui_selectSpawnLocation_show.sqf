@@ -77,7 +77,10 @@ ExileClientSelectedSpawnLocationMarkerName = "";
 		_listItemIndex = _listBox lbAdd "Premium 1";
 		_listItemIndex = _listBox lbSetTooltip [1, "300 RUR month"];
 		_listItemIndex = _listBox lbAdd "Premium 2";
-		_listItemIndex = _listBox lbSetTooltip [2, "300 RUR month"];		//собственно вот, [2, "300RUR month"];	- где 2 это номер case, "300RUR month" текст который будет выводиться при наведении на класс
+		_listItemIndex = _listBox lbSetTooltip [2, "500 RUR month"];		//собственно вот, [2, "300RUR month"];	- где 2 это номер case, "300RUR month" текст который будет выводиться при наведении на класс
+		_listItemIndex = _listBox lbAdd "Premium 2";
+		_listItemIndex = _listBox lbSetTooltip [3, "700 RUR month"];		//собственно вот, [2, "300RUR month"];	- где 2 это номер case, "300RUR month" текст который будет выводиться при наведении на класс
+
 	};
 	systemChat 'For buy premium contact to admin';
 	/* waitUntil {!isNil "atlas_sup"}; */
@@ -93,13 +96,14 @@ ExileClientSelectedSpawnLocationMarkerName = "";
 			case 1:				//Дублируем этот класс, чтобы получилось сase 2, как показано ниже
 			{		
 				// сюда писать ID игроков которым будет выдаваться лут, через запятую
-				if !(_puid in [""]) then 
+				if !(_puid in ["76561198346676695"]) then 
 				{
 				
 					[parseText format["<t size='0.7'font='OrbitronLight'>Only Available for Prem Loadout Donators.</t>"],0,0,10,0] spawn bis_fnc_dynamictext;} else {
 					//Сюда писать лут, можно скопировать с виртуального арсенала
 					
 					//При портировании лута из арсенала нужно будет заменить все this на player
+					player addItemToUniform "Exile_Item_DuctTape";
 					
 					call ExileClient_object_player_bambiStateEnd; 
 				};
@@ -107,17 +111,37 @@ ExileClientSelectedSpawnLocationMarkerName = "";
 			case 2:				//Вот, это case 2, дописываем его ективацию выше, в данном случае это 68-69 строки
 			{		
 				// сюда писать ID игроков которым будет выдаваться лут, через запятую
-				if !(_puid in [""]) then 
+				if !(_puid in ["76561198346676695"]) then 
 				{
 				
 					[parseText format["<t size='0.7'font='OrbitronLight'>Only Available for Prem Loadout Donators.</t>"],0,0,10,0] spawn bis_fnc_dynamictext;} else {
 					//Сюда писать лут, можно скопировать с виртуального арсенала
 					
 					//При портировании лута из арсенала нужно будет заменить все this на player
+					player addItemToUniform "Exile_Item_DuctTape";
+					player addItemToUniform "Exile_Item_DuctTape";
+					call ExileClient_object_player_bambiStateEnd; 
+				};
+			};
+			case 3:				//Вот, это case 2, дописываем его ективацию выше, в данном случае это 68-69 строки
+			{		
+				// сюда писать ID игроков которым будет выдаваться лут, через запятую
+				if !(_puid in ["76561198346676695"]) then 
+				{
+				
+					[parseText format["<t size='0.7'font='OrbitronLight'>Only Available for Prem Loadout Donators.</t>"],0,0,10,0] spawn bis_fnc_dynamictext;} else {
+					//Сюда писать лут, можно скопировать с виртуального арсенала
+					
+					//При портировании лута из арсенала нужно будет заменить все this на player
+					player addItemToUniform "Exile_Item_DuctTape";
+					player addItemToUniform "Exile_Item_DuctTape";
+					player addItemToUniform "Exile_Item_DuctTape";
 					
 					call ExileClient_object_player_bambiStateEnd; 
 				};
 			};
+			
+			
 		};
 	};
 	fnc_LBDblClick_LBSelChanged_LO = {

@@ -35,7 +35,7 @@ if (_mode isEqualTo 1) then // if dynamic
 
       if (_forceLeave > 0) then
          {
-            systemChat "YOU WILL BE KICKED IN 30 SECONDS!";
+            systemChat "ВАС ОТКЛЮЧАТ ОТ СЕРВЕРА ЧЕРЕЗ 30 СЕКУНД !";
             uiSleep 30;
             (findDisplay 49) closeDisplay 1;
             (findDisplay 46) closeDisplay 1;
@@ -101,7 +101,7 @@ if (_mode isEqualTo 2) then // if scheduled
 
       if (_forceLeave > 0) then
          {
-            systemChat "YOU WILL BE KICKED IN 30 SECONDS!";
+            systemChat "ВАС ОТКЛЮЧАТ ОТ СЕРВЕРА ЧЕРЕЗ 30 СЕКУНД !";
             uiSleep 30;
             (findDisplay 49) closeDisplay 1;
             (findDisplay 46) closeDisplay 1;

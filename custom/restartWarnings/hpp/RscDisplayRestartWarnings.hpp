@@ -100,7 +100,7 @@ class RscDisplayRestartWarnings
          colorText[] = {1,1,1,0.9};
          fade = 1;
          font = "PuristaLight";
-         text = "minutes until restart...";
+         text = "минут до перезагрузки...";
          sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.5)";
       };
    };

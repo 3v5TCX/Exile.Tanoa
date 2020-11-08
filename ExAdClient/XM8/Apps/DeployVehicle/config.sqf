@@ -28,7 +28,7 @@ ExAd_XM8_DV_fnc_itemsMissing = {
 		_recipeStr = _recipeStr + format["%1x : %2<br />",(if(_amount < 0)then{((-1) * _amount)}else{_amount}), _text];
 	}forEach _recipe;
 	
-	_response = format["You need <br />%1",_recipeStr];
+	_response = format["Вам нужен <br />%1",_recipeStr];
 
 	_response
 };

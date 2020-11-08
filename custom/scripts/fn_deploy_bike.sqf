@@ -19,10 +19,10 @@ if (vehicle player isEqualTo player) then
 		atlas_deploy = [player, _spawnPos, _spawnDir];
 		player removeItem _item;
 		publicVariableServer "atlas_deploy";
-		systemChat "WARNING: Deployed vehicles do not save after server restart!";
+		systemChat "WARNING: Это одноразовая техника и пропадет после перезапуска сервера!";
 	} else {
-		["ErrorTitleOnly",[format["You need: %1 to deploy bike!",_item]]] call ExileClient_gui_toaster_addTemplateToast;
+		["ErrorTitleOnly",[format["Вам нужен: %1 что бы сделать байк! !",_item]]] call ExileClient_gui_toaster_addTemplateToast;
 	};
 } else {
-	["ErrorTitleOnly",["You cannot do this while in a vehicle!"]] call ExileClient_gui_toaster_addTemplateToast;
+	["ErrorTitleOnly",["Вы не можете это сделать находясь за рулем!"]] call ExileClient_gui_toaster_addTemplateToast;
 };

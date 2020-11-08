@@ -13,7 +13,7 @@ closeDialog 0;
 if (vehicle player isEqualTo player) then 
 {
 	//if (_item in (magazines player)) then 
-	if (1==1)
+	if (1>0)
 	{
 		_spawnPos = player modelToWorld [0,2,0];
 		_spawnDir = (getDir player) -90;
@@ -36,15 +36,7 @@ if (vehicle player isEqualTo player) then
 		removeVest _solder;
 		removeBackpack _solder;
 		_solder setUnitRank "COLONEL"; // _botRang; 
-/*
-		PRIVATE	0	?	0
-CORPORAL	500	?	0
-SERGEANT	1500	?	0
-LIEUTENANT	2500	?	0
-CAPTAIN	3500	?	0
-MAJOR	5000	?	0
-COLONEL
-/**/
+
 		_solder setUnitAbility 1; //_botSkill;
 		_solder setSkill 1; //_skill;
 

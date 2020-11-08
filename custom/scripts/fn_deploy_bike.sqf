@@ -13,7 +13,7 @@ closeDialog 0;
 if (vehicle player isEqualTo player) then 
 {
 	//if (_item in (magazines player)) then 
-	if (1>0)
+	if (1>0) then
 	{
 		_spawnPos = player modelToWorld [0,2,0];
 		_spawnDir = (getDir player) -90;

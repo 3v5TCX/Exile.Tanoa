@@ -12,7 +12,8 @@ if (!hasInterface || isServer) exitWith {};
 closeDialog 0;
 if (vehicle player isEqualTo player) then 
 {
-	if (_item in (magazines player)) then 
+	//if (_item in (magazines player)) then 
+	if (1==1)
 	{
 		_spawnPos = player modelToWorld [0,2,0];
 		_spawnDir = (getDir player) -90;
@@ -27,7 +28,30 @@ if (vehicle player isEqualTo player) then
 		_playerGrp = group _player;
 		_leader = leader _playerGrp;
 		_vehicleClass = "B_Soldier_GL_F";
-		_solder = _playerGrp createUnit [_vehicleClass, _spawnPos, [], 10, "CAN_COLLIDE"];
+		_solder = _playerGrp createUnit [_vehicleClass, _playerPos, [], 10, "CAN_COLLIDE"];
+
+		removeAllWeapons _solder;
+		removeAllItems _solder;
+		removeUniform _solder;
+		removeVest _solder;
+		removeBackpack _solder;
+		_solder setUnitRank "COLONEL"; // _botRang; 
+/*
+		PRIVATE	0	?	0
+CORPORAL	500	?	0
+SERGEANT	1500	?	0
+LIEUTENANT	2500	?	0
+CAPTAIN	3500	?	0
+MAJOR	5000	?	0
+COLONEL
+/**/
+		_solder setUnitAbility 1; //_botSkill;
+		_solder setSkill 1; //_skill;
+
+		_solder setVariable ["botId", _botID];
+		_sessionIDLeader = _leader getVariable ["ExileSessionID", 0];
+		//[_sessionIDLeader,"createBotsRequest", [(netId _leader),_botArray,_moneyOut,_solder,_botID]] call ExileServer_system_network_send_to;		
+
 		/*************/
 
 	} else {

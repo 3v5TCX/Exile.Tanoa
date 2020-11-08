@@ -9,6 +9,8 @@ unsafeCVL = 1;
 #include "MarXet\dialog\RscMarXetDialog.hpp"
 #include "MostWanted_Client\dialog\dialog.hpp"
 #include "R3F_LOG\desc_include.h"
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // Server Settings - Modify at will
 ///////////////////////////////////////////////////////////////////////////////
@@ -76,6 +78,8 @@ showHUD[] =
 };
 
 #include "config.hpp"
+//#include "traderBots\traderBoats.cpp"
+
 #include "ExAdClient\ExAd.hpp"
 #include "custom\DailyReward\RscRewardDialog.hpp"
 #include "MostWanted_Client\Dialog\MostWantedDefines.hpp"
@@ -86,6 +90,8 @@ showHUD[] =
 #include "custom\Paint\Config\CfgBasePainting.hpp"
 #include "custom\Paint\Config\CfgVehiclePainting.hpp"
 #include "custom\rewards\rewardsDialog.hpp"
+
+
 class CfgFunctions
 {
 	#include "ExAdClient\CfgFunctions.hpp"

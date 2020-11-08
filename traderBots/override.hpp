@@ -1,0 +1,10 @@
+//ExileClient_gui_hud_event_onKeyUp = "traderBots\Override\ExileClient_gui_hud_event_onKeyUp.sqf";
+ExileClient_gui_hud_event_onDraw3d = "traderBots\Override\ExileClient_gui_hud_event_onDraw3d.sqf";
+//ExileServer_system_network_event_onHandleDisconnect = "traderBots\Override\ExileServer_system_network_event_onHandleDisconnect.sqf";
+//ExileServer_object_player_event_onMpKilled = "traderBots\Override\ExileServer_object_player_event_onMpKilled.sqf";
+ExileServer_object_vehicle_event_onGetIn = "traderBots\Override\ExileServer_object_vehicle_event_onGetIn.sqf";
+ExileClient_gui_vehicleCustomsDialog_show = "traderBots\Override\ExileClient_gui_vehicleCustomsDialog_show.sqf";
+ExileClient_gui_vehicleRekeyDialog_show = "traderBots\Override\ExileClient_gui_vehicleRekeyDialog_show.sqf";
+ExileClient_gui_vehicleTraderDialog_show = "traderBots\Override\ExileClient_gui_vehicleTraderDialog_show.sqf";
+ExileClient_gui_traderDialog_show = "traderBots\Override\ExileClient_gui_traderDialog_show.sqf";
+ExileClient_gui_lockerDialog_show = "traderBots\Override\ExileClient_gui_lockerDialog_show.sqf";

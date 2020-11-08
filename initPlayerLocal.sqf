@@ -5,8 +5,11 @@
 #include "initPlayerLocalScripts.sqf"
 if (!hasInterface || isServer) exitWith {};
 
-// 76 NPCs
+// 77 NPCs
 private _npcs = [
+["Exile_Trader_Bots", ["HubStandingUB_idle1","HubStandingUB_idle2","HubStandingUB_idle3","HubStandingUB_move1"], "Exile_Trader_Bots", "WhiteHead_04", [[],[],["hgun_Pistol_Signal_F","","","",[],[],""],["U_Marshal",[]],["V_Rangemaster_belt",[]],[],"H_Cap_marshal","G_Sport_Blackyellow",[],["","","","","",""]], [9375.44, 6211.36, 1.63078], [0.606488, 0.795093, 0], [0, 0, 1]],
+
+
 ["Exile_Trader_WasteDump", ["Acts_CivilListening_2"], "Exile_Trader_WasteDump", "Default", [[],[],[],["U_I_C_Soldier_Bandit_4_F",[]],[],[],"H_Hat_grey","",[],["","","","","",""]], [2253.92, 8581.53, 1.44809], [-0.031831, 0.999493, 0], [0, 0, 1]],
 ["Exile_Trader_Aircraft", ["LHD_krajPaluby"], "Exile_Trader_Aircraft", "AfricanHead_03", [[],[],[],["U_I_pilotCoveralls",[]],[],[],"H_PilotHelmetHeli_O","",[],["","","","","",""]], [2104.65, 3447.84, 12.9514], [-0.480545, 0.87697, 0], [0, 0, 1]],
 ["Exile_Trader_AircraftCustoms", ["HubStandingUA_idle1","HubStandingUA_idle2","HubStandingUA_idle3","HubStandingUA_move1","HubStandingUA_move2"], "Exile_Trader_AircraftCustoms", "WhiteHead_01", [[],[],[],["Exile_Uniform_ExileCustoms",[]],["V_RebreatherB",[]],[],"H_PilotHelmetFighter_B","G_Tactical_Clear",[],["","","","","",""]], [2096.73, 3442.05, 12.9514], [0.884801, 0.46597, 0], [0, 0, 1]],
@@ -32,6 +35,9 @@ private _npcs = [
 ["Exile_Trader_Equipment", ["AmovPsitMstpSrasWrflDnon_WeaponCheck1","AmovPsitMstpSrasWrflDnon_WeaponCheck2","AmovPsitMstpSrasWrflDnon_Smoking"], "Exile_Trader_Equipment", "WhiteHead_07", [["Exile_Weapon_LeeEnfield","","","",["Exile_Magazine_10Rnd_303",10],[],""],[],[],["U_I_C_Soldier_Para_2_F",[["Exile_Magazine_10Rnd_303",10,3]]],["V_BandollierB_rgr",[]],[],"","G_Aviator",[],["","","","","",""]], [11655.5, 4123.17, 164.612], [0.818345, -0.574728, 0], [0, 0, 1]],
 ["Exile_Trader_Office", ["HubSittingChairUB_idle1","HubSittingChairUB_idle2","HubSittingChairUB_idle3","HubSittingChairUB_move1"], "Exile_Trader_Office", "WhiteHead_15", [[],[],[],["U_I_C_Soldier_Camo_F",[]],[],[],"H_Hat_tan","",[],["","","","","",""]], [11666, 4097.06, 165.242], [0.875696, -0.482863, 0], [0, 0, 1]],
 ["Exile_Trader_Armory", ["HubSittingChairC_idle1","HubSittingChairC_idle2","HubSittingChairC_idle3","HubSittingChairC_move1"], "Exile_Trader_Armory", "WhiteHead_19", [["arifle_AK12_GL_F","","","optic_MRCO",["30Rnd_762x39_Mag_F",30],[],""],[],[],["U_I_C_Soldier_Para_1_F",[["30Rnd_762x39_Mag_F",30,1]]],["V_Rangemaster_belt",[["30Rnd_762x39_Mag_F",30,2]]],[],"H_MilCap_gry","G_Shades_Black",[],["","","","","",""]], [11660.8, 4116.49, 164.629], [-0.679335, 0.733828, 0], [0, 0, 1]],
+
+
+
 ["Exile_Trader_Hardware", ["HubSittingHighB_idle1","HubSittingHighB_idle2","HubSittingHighB_idle3"], "Exile_Trader_Hardware", "WhiteHead_06", [["arifle_AKM_F","","","",["30Rnd_762x39_Mag_F",30],[],""],[],[],["U_I_C_Soldier_Para_4_F",[["30Rnd_762x39_Mag_F",30,3]]],["V_BandollierB_rgr",[]],["B_UAV_01_backpack_F",[]],"H_Booniehat_khk_hs","",[],["","","","","",""]], [11659.7, 4085.5, 164.747], [0.928693, 0.370849, 0], [0, 0, 1]],
 ["Exile_Trader_Food", ["InBaseMoves_table1"], "Exile_Trader_Food", "WhiteHead_12", [[],[],[],["U_I_C_Soldier_Para_3_F",[]],[],[],"H_Cap_blk","G_Aviator",[],["","","","","",""]], [11666.9, 4078.86, 165.219], [-0.9966, -0.0823912, 0], [0, 0, 1]],
 ["Exile_Trader_Vehicle", ["HubFixingVehicleProne_idle1"], "Exile_Trader_Vehicle", "AfricanHead_02", [[],[],[],["U_I_C_Soldier_Para_5_F",[]],[],[],"H_Bandanna_gry","G_Squares",[],["","","","","",""]], [11646.1, 4117.23, 164.377], [-0.960024, 0.232079, 0.156504], [0.160897, 0, 0.986971]],

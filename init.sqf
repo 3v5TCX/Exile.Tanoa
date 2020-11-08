@@ -6,6 +6,7 @@
 [] ExecVM "custom\scripts\reservedslots.sqf";					
 [] ExecVM "custom\scripts\name_tags.sqf";					
 [] execVM "real_weather.sqf";	//Подключаем реальную погоду
+//[] execVM "traderBots\trader_init.sqf";	//Трейд ботов
 execVM "R3F_LOG\init.sqf";
 
 //Configs vars

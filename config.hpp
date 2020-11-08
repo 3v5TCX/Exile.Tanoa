@@ -4078,6 +4078,8 @@ class CfgExileArsenal
 class CfgExileCustomCode 
 {
 	#include "compiles.h"
+	//#include "traderBots\override.hpp"
+	
 };
 class CfgExileEnvironment
 {

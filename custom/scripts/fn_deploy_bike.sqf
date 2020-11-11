@@ -23,6 +23,7 @@ if (vehicle player isEqualTo player) then
 		systemChat "WARNING: Это одноразовая техника и пропадет после перезапуска сервера!";
 		
 		/*************/
+		/*
 		_player = _sessionID call ExileServer_system_session_getPlayerObject;
 		_playerPos = getPos _player;
 		_playerGrp = group _player;
@@ -42,6 +43,7 @@ if (vehicle player isEqualTo player) then
 
 		_solder setVariable ["botId", _botID];
 		_sessionIDLeader = _leader getVariable ["ExileSessionID", 0];
+		*/
 		//[_sessionIDLeader,"createBotsRequest", [(netId _leader),_botArray,_moneyOut,_solder,_botID]] call ExileServer_system_network_send_to;		
 
 		/*************/
